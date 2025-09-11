@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Head from "next/head";
 
+import { doLogin } from "@/services/Web3Service";
+
 export default function Home() {
   const [message, setMessage] = useState("");
 
@@ -20,6 +22,18 @@ export default function Home() {
     alignItems: "center",
     justifyContent: "space-between",
   };
+
+  function handleConnectWallet() {
+    setMessage("Connecting with Metamask...please wait...");
+
+    doLogin()
+      .then((walletAddress) => {
+        setMessage(`Wallet connected: ${walletAddress}`);
+      })
+      .catch((error) => {
+        setMessage(error.message);
+      });
+  }
 
   return (
     <div
@@ -44,7 +58,10 @@ export default function Home() {
             happening in the world.
           </p>
           <div className="d-flex justify-content-start mt-5">
-            <button className="btn btn-primary btn-lg">
+            <button
+              className="btn btn-primary btn-lg"
+              onClick={handleConnectWallet}
+            >
               <img
                 src="/logo-metamask.png"
                 alt="logo metamask"
