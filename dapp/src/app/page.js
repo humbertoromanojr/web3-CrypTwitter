@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/navigation";
 
 import { doLogin } from "@/services/Web3Service";
 
 export default function Home() {
+  const { push } = useRouter();
+
   const [message, setMessage] = useState("");
 
   const backgroundImageStyle = {
@@ -27,10 +30,9 @@ export default function Home() {
     setMessage("Connecting with Metamask...please wait...");
 
     doLogin()
-      .then((walletAddress) => {
-        setMessage(`Wallet connected: ${walletAddress}`);
-      })
+      .then((walletAddress) => push("/timeline"))
       .catch((error) => {
+        console.error(error);
         setMessage(error.message);
       });
   }
