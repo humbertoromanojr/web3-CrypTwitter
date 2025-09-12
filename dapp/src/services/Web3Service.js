@@ -28,7 +28,7 @@ function getContract() {
   return new web3.eth.Contract(ABI, CONTRACT_ADDRESS, { from });
 }
 
-export async function addTweet() {
+export async function addTweet(text) {
   const contract = getContract();
 
   await contract.methods.addTweet(text).send();
