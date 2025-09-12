@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+import { addTweet } from "@/services/Web3Service";
+
 export default function NewTweet() {
   const { push } = useRouter();
 
@@ -10,7 +12,19 @@ export default function NewTweet() {
   const [text, setText] = useState("");
 
   function handlePublishTweet() {
-    alert(text);
+    setMessage("Sending your Tweet to the Blockchain...please wait...");
+
+    addTweet(text)
+      .then((result) => {
+        setMessage(
+          "Tweet sent to the Blockchain. Please wait a minute for it to load on the screen."
+        );
+        setText("");
+      })
+      .catch((error) => {
+        console.error(error);
+        setMessage(error.message);
+      });
   }
 
   useEffect(() => {
