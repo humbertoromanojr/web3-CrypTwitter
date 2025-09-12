@@ -56,7 +56,7 @@ export default function NewTweet() {
             onClick={handlePublishTweet}
           />
           {message ? (
-            <span className="alert alert-success mt-5 opacity-75">
+            <span className="message alert alert-success mt-5 opacity-75">
               {message}
             </span>
           ) : null}
