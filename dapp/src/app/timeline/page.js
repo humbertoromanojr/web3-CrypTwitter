@@ -4,6 +4,7 @@ import { useState } from "react";
 import Head from "next/head";
 
 import NewTweet from "@/components/NewTweet";
+import Tweet from "@/components/Tweet";
 
 export default function Timeline() {
   const [message, setMessage] = useState("");
@@ -42,6 +43,7 @@ export default function Timeline() {
           </h1>
           <div className="d-flex justify-content-start mt-5">
             <NewTweet />
+            <Tweet />
           </div>
 
           {message ? (
