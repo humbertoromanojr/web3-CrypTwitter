@@ -29,14 +29,15 @@ CRYPTWITTER WEB 3.0
 
 - [Web3](https://github.com/web3/web3.js)
 
+- [Kit Wallet Avatar](https://www.npmjs.com/package/@cfx-kit/wallet-avatar)
+
 ## Demonstration
 
 <div align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1b4eAWjFDlmt_gDwKxrICAO90dhXEiDdA" alt="" width="100%" border="0" />
+  <img src="https://drive.google.com/uc?export=view&id=151WJDZusjouYfIynFp0LnpB0Nmt2OudS" alt="" width="100%" border="0" />
   <br />
-  <hr />
   <br />
-  <img src="https://drive.google.com/uc?export=view&id=" alt="" width="100%" border="0" />
+  <img src="https://drive.google.com/uc?export=view&id=1N-ajwdg5O-UmpVvaIJDA3SHXwSOhm9mW" alt="" width="100%" border="0" />
 </div>
 
 ## Install Frontend
@@ -55,6 +56,9 @@ Install node_modules <br />
 Run application <br />
 <img src="https://drive.google.com/uc?export=view&id=16QqYlur8qtl5ao_XyEb4IthGyveQmELo" alt="" width="22" border="0" /> `npm run dev` and `http://localhost:3000`
 <br /><br />
+
+Install Kit Wallet Avatar <br />
+`npm i @cfx-kit/wallet-avatar`
 
 ##
 
