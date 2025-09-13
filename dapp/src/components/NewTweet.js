@@ -52,7 +52,7 @@ export default function NewTweet() {
           <input
             type="button"
             className="btn btn-primary"
-            value="Tweet"
+            value="Send Tweet"
             onClick={handlePublishTweet}
           />
           {message ? (
