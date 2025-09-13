@@ -28,8 +28,10 @@ export default function NewTweet() {
   }
 
   useEffect(() => {
-    setMessage("Please create or install your Metamask wallet.");
     const wallet = localStorage.getItem("walletAddress");
+    if (!wallet) {
+      setMessage("Please create or install your Metamask wallet.");
+    }
     if (!wallet) {
       push("/");
     }
