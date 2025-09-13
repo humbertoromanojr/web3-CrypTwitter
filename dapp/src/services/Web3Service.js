@@ -39,3 +39,14 @@ export async function changeUsername(newName) {
 
   await contract.methods.addTweet(newName).send();
 }
+
+export async function getLastTweets(page) {
+  const contract = getContract();
+
+  const tweets = await contract.methods.getLastTweets(page).call();
+
+  return tweets.map((t) => {
+    // Filter non-empty text
+    return { ...t }.filter((t) => t.text !== "");
+  });
+}
